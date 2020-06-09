@@ -1,0 +1,16 @@
+<!--author rao-->
+<template>
+   <lightning-card title="All Contact Records">
+       <ul>
+           <template if:true={responseReceived}>
+               <li key={contact.id}>
+                   <div class="slds-p-around_medium lgc-bg">
+                       <lightning-tile label={contact.LastName}>
+                           <p class="slds-truncate" title={contact.Phone}>{contact.Phone}</p>
+                        </lightning-tile>
+                   </div>
+               </li>
+           </template>
+       </ul>
+   </lightning-card> 
+</template>
