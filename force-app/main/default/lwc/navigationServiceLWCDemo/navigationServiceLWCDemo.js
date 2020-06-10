@@ -32,4 +32,71 @@ export default class NavigationServiceLWCDemo extends NavigationMixin(LightningE
             }
         })
     }
+    navigateAccRecentView(){
+        this[NavigationMixin.Navigate]({
+            "type":"standard__objectPage",
+            "attributes":{
+                "objectApiName":"Account",
+                "actionName":"list"
+            },
+            "state":{
+                "filterName":"Recent"
+            }
+        });
+    }
+    navigateRelatedListView(){
+        this[NavigationMixin.Navigate]({
+            "type":"standard__recordRelationshipPage",
+            "attributes":{
+                recordId:this.recordId,
+                objectApiName:'Account',
+                relationshipApiName:'Contacts',
+                actionName:'view'
+            }
+        });
+    }   
+    navigateAccObject(){
+        this[NavigationMixin.Navigate]({
+            "type":"standard__objectPage",
+            "attributes":{
+                "objectApiName":"Account",
+                "actionName":"home"
+            }
+        });
+    } 
+    navigateConObject(){
+        this[NavigationMixin.Navigate]({
+            "type":"standard__objectPage",
+            "attributes":{
+                "objectApiName":"Contact",
+                "actionName":"home"
+            }
+        });
+    }
+    navigatToWebPage(){
+        this[NavigationMixin.Navigate]({
+            "type":"standard__webPage",
+            "attributes":{
+                "url":"https://www.mytutorialrack.com/"
+            }
+        });
+
+    }
+    navigatToHomePage(){
+        this[NavigationMixin.Navigate]({
+            type:'standard__namedPage',
+            attributes:{
+                pageName:'home'
+            }
+        });
+    }
+    navigatToChatterHome(){
+        this[NavigationMixin.Navigate]({
+            type:'standard__namedPage',
+            attributes:{
+                pageName:'chatter'
+            }
+        });
+
+    }
 }
